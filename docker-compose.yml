@@ -1,0 +1,10 @@
+---
+services:
+  nginx-password-cookie-auth:
+    image: fabiocicerchia/nginx-lua:1.29.0-debian12.11
+    restart: always
+    ports:
+      - "32778:80"
+    volumes:
+      - ./cookie_auth.lua:/etc/nginx/cookie_auth.lua
+      - ./default.conf:/etc/nginx/conf.d/default.conf
